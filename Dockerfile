@@ -14,12 +14,16 @@ ENV NODE $node
 
 # Update & install packages for graylog
 RUN apt-get update && \
-    apt-get install -y git python
+    apt-get install -y git python3 python3-pip
 
 #Configure ES
-RUN git clone https://github.com/royrusso/elasticsearch-HQ.git
+RUN git clone https://github.com/ElasticHQ/elasticsearch-HQ.git
 WORKDIR elasticsearch-HQ
 
-EXPOSE 8000 8000
+#Install requirements
+RUN pip3 install -r requirements.txt
 
-CMD ["python", "-m", "SimpleHTTPServer", "8000"]
+EXPOSE 5000
+
+CMD ["python3", "application.py"]
+#CMD ["python", "-m", "SimpleHTTPServer", "8000"]
