@@ -9,7 +9,7 @@ FROM debian:latest
 
 MAINTAINER hihouhou < hihouhou@hihouhou.com >
 
-ENV ES_HQ_VERSION v3.4.0
+ENV ES_HQ_VERSION v3.4.1
 
 # Update & install packages for elasticsearch-hq
 RUN apt-get update && \
