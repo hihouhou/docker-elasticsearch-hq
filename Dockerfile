@@ -20,8 +20,7 @@ RUN mkdir elasticsearch-HQ && \
     cd elasticsearch-HQ && \
     wget https://api.github.com/repos/ElasticHQ/elasticsearch-HQ/tarball/${ES_HQ_VERSION} -O ${ES_HQ_VERSION}.tar.gz && \
     tar xf  ${ES_HQ_VERSION}.tar.gz --strip-components=1 && \
-    pip3 install -r requirements.txt && \
-    pip3 install python-engineio --upgrade
+    pip3 install -r requirements.txt
 
 WORKDIR elasticsearch-HQ
 
